@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color:  hsl(0, 0%, 98%);
+}
+
+.intro {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    padding: 6rem 0 0 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 100px);
+    grid-template-areas:
+            ". team ."
+            "super team calc"
+            "super karma calc"
+            ". karma .";
+
+    gap: 2rem;
+    justify-content: center;
+}
+
+.items {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.super {
+    grid-area: super;
+    border-top: 5px solid turquoise;
+    /*grid-column: 1 / 2;*/
+    /*grid-row:  2 / 4;*/
+}
+
+.team {
+    grid-area: team;
+    border-top: 5px solid red;
+    /*grid-column: 2 / 3;*/
+    /*grid-row: 1 / 3;*/
+}
+
+.calc {
+    grid-area: calc;
+    border-top: 5px solid dodgerblue;
+    /*grid-column: 3 / 4;*/
+    /*grid-row: 2 / 4;*/
+}
+
+.karma {
+    grid-area: karma;
+    border-top: 5px solid yellow;
+    /*grid-column: 2 / 3;*/
+    /*grid-row: 3 / 5;*/
+}
+.img-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 50rem) {
+
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
