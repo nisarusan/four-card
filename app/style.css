@@ -1,17 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    font-size: 16px;
+    font-size: 15px;
+    --dark-blue: hsl(234, 12%, 34%);
+    --gray-blue: hsl(229, 6%, 66%);
+
 }
 
 body {
+    font-family: "Poppins", sans-serif;
     background-color:  hsl(0, 0%, 98%);
 }
 
 .intro {
+    padding-top: 6rem;
     text-align: center;
+}
+
+.intro h2 {
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--dark-blue)
 }
 
 .grid-container {
@@ -19,9 +32,9 @@ body {
     padding: 6rem 0 0 0;
     margin: 0 auto;
     width: 100%;
-    max-width: 80%;
+    max-width: 60%;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
             ". team ."
             "super team calc"
@@ -33,20 +46,33 @@ body {
 }
 
 .items {
+    color: #171717;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     border-radius: .5rem;
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-content: center;
     gap: 2rem;
-    padding: 1rem;
+    padding: 2rem 4rem;
+}
+
+.items h2 {
+    color: var(--dark-blue);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.items p {
+    color: var(--gray-blue);
+    width: 100%;
+    max-width: 70%;
 }
 
 .super {
     grid-area: super;
     border-top: 5px solid turquoise;
+
     /*grid-column: 1 / 2;*/
     /*grid-row:  2 / 4;*/
 }
@@ -54,6 +80,10 @@ body {
 .team {
     grid-area: team;
     border-top: 5px solid red;
+
+    /* Dit is als je binnen een cel wilt uitlijnen van links naar rechts * /
+    /*align-self: center;   !* Verticaal gecentreerd *!*/
+    /*justify-self: end;*/
     /*grid-column: 2 / 3;*/
     /*grid-row: 1 / 3;*/
 }
@@ -77,9 +107,9 @@ body {
 }
 
 @media screen and (max-width: 50rem) {
-
     .grid-container {
         display: flex;
         flex-direction: column;
+        max-width: 80%;
     }
 }
